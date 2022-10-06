@@ -18,7 +18,7 @@ interface Action {
 export function renderToast(message: Message | null, action?: Action) {
   let messageText = '';
 
-  if (message != null) {
+  if (message !== null) {
     messageText = `
       <div id="info-block" class="info-block ${message.type}">
         <p>${message.text}</p>
@@ -30,7 +30,7 @@ export function renderToast(message: Message | null, action?: Action) {
   renderBlock('toast-block', messageText);
 
   const button = document.getElementById('toast-main-action');
-  if (button != null) {
+  if (button !== null) {
     button.onclick = function () {
       if (action != null && action.handler != null) {
         action.handler();
